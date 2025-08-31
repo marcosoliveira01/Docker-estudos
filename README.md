@@ -5,13 +5,11 @@ Aqui vou arquivar todos os projetos que fiz utilizando Docker, desde os mais bá
 
 **Estrutura do Repositório**
 
-- 01-hello-docker/ → Primeiro container com Docker (exemplo simples).
+- nginx-webserver/ → Servidor web rodando em Nginx.
 
-- 02-nginx-webserver/ → Servidor web rodando em Nginx.
+- go-server/ → Aplicação Go rodando em container.
 
-- 03-go-server/ → Aplicação Go rodando em container.
-
-- 04-docker-compose/ → Exemplos com múltiplos containers usando Docker Compose.
+- docker-compose/ → Exemplos com múltiplos containers usando Docker Compose.
 
 - ... (em constante atualização)
 
