@@ -23,13 +23,21 @@ Repositório de estudos com Docker. Aqui vou arquivar todos os projetos que fiz 
   - Docker Compose para desenvolvimento
   - Healthcheck configurado
 
+- **`postgres/`** → Stack completa com PostgreSQL + Streamlit + PgAdmin
+  - Banco de dados PostgreSQL com dados iniciais
+  - Aplicação Streamlit com CRUD de notas
+  - PgAdmin para administração do banco
+  - Volumes persistentes para dados
+
 ## 🛠️ Tecnologias & Ferramentas
 
 - **Docker** - Containerização
 - **Docker Compose** - Orquestração de containers
-- **Linguagens**: Go, JavaScript/Node.js, Python
-- **Frameworks**: React, Vite, Streamlit
-- **Imagens base**: golang:alpine, node, python:slim, alpine
+- **Linguagens**: Go, JavaScript/Node.js, Python, SQL
+- **Frameworks**: React, Vite, Streamlit, SQLAlchemy
+- **Bancos de dados**: PostgreSQL
+- **Ferramentas**: PgAdmin, psycopg2
+- **Imagens base**: golang:alpine, node, python:slim, postgres, alpine
 
 ## 🎯 Objetivo
 
@@ -65,6 +73,16 @@ docker run -p 8501:8501 streamlit-app
 docker-compose -f compose.dev.yml up --build
 ```
 
+### PostgreSQL Stack (Python + SQL)
+```bash
+cd Basicos/postgres
+docker compose up --build -d
+# Acessar:
+# Streamlit: http://localhost:8501
+# PgAdmin: http://localhost:8082 (admin@local / admin)
+# PostgreSQL: localhost:5433 (user / senha / meubanco)
+```
+
 ## 📊 Status dos Projetos
 
 | Projeto | Status | Tecnologia | Container | Funcionando |
@@ -72,6 +90,7 @@ docker-compose -f compose.dev.yml up --build
 | Projeto1 | ✅ | Go | Alpine | ✅ |
 | projeto2 | ✅ | Node.js | Multi-stage | ✅ |
 | streamlit-app | ✅ | Python/Streamlit | Slim | ✅ |
+| postgres | ✅ | Python/PostgreSQL | Stack completa | ✅ |
 
 ---
 
