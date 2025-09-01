@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: streamlit-dev:latest
+    container_name: streamlit-dev
+    environment:
+      APP_ENV: "dev"
+      APP_NAME: "Streamlit Docker App (DEV)"
+    ports:
+      - "8501:8501"
+    volumes:
+      - ./:/app:rw,cached
+    command: >
+      streamlit run app.py
+      --server.address=0.0.0.0
+      --server.runOnSave=true
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:8501/ || exit 1"]
+      interval: 10s
+      timeout: 3s
+      retries: 3
+      start_period: 5s

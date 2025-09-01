@@ -1,0 +1,23 @@
+# Git & editor
+.git
+.gitignore
+*.swp
+*.swo
+.vscode
+.idea
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.venv
+venv/
+
+# SO
+.DS_Store
+
+# Dados e artefatos locais
+data/
+dist/
+build/
